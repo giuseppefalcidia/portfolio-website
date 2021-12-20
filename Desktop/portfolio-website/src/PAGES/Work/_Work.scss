@@ -1,0 +1,138 @@
+.Work_wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  grid-area: component;
+  display: flex;
+
+  @media (min-width: 1870px) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.Work {
+  //LAYOUT
+  display: flex;
+  align-items: center;
+
+  //TYPOGRAPHY
+  text-align: center;
+  font-family: "Inter", sans-serif;
+
+  //DIMENSIONS
+  width: 100%;
+  height: 100%;
+
+  //OTHER
+  overflow-x: scroll;
+
+  .title {
+    margin-bottom: 8px;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  height: 360px;
+}
+
+.title_projects {
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  color: black;
+
+  padding-bottom: 7px;
+
+  span {
+    &:hover {
+      transition: 90ms;
+      border-bottom: 2px solid #a2ffe6;
+      border-radius: 2px;
+    }
+  }
+
+  .freelance_tag {
+    color: #4285f4;
+  }
+
+  &:visited {
+    color: black;
+  }
+}
+
+
+
+.square_projects {
+  //LAYOUT
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  //TYPOGRAPHY
+  background: #0a0a0a;
+  color: #38383d;
+  font-size: 1.7em;
+  font-weight: 900;
+  line-height: 119%;
+
+  //DIMENSIONS
+  width: 320px; //TO SET AS QUERY
+  height: 330px; //TO SET AS QUERY
+  max-width: 357px;
+  max-height: 359px;
+
+  //BORDER-PADDING-MARGIN
+  padding: 9px 7px;
+  border-radius: 25px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 7px;
+    object-fit: contain;
+
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .Work {
+    grid-area: component;
+    width: 100%;
+    height: 100%;
+    margin: 5% 0;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title_projects {
+    height: auto;
+  }
+
+  .square_projects {
+    width: auto;
+  }
+
+  .cardWrapper {
+    margin: 10% auto 15% auto;
+  }
+}

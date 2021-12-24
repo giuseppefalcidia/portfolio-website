@@ -1,0 +1,928 @@
+.App {
+  position: relative;
+  z-index: 9;
+  font-family: 'GlacialIndifferenceRegular';
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  box-shadow: 2px 3px 4px rgba(87, 84, 84, 0.11);
+  display: grid;
+  grid-template: 3% minmax(10%, 13%) 2% minmax(400px, 1fr) 4% minmax(10%, auto) 5%/5% minmax(275px, 1fr) 1fr minmax(275px, 1fr) 5%;
+  grid-template-areas: ". . . . ." ". logo . menu ." ". . . . ." "component component component component component" ". . . . ." ". footer footer footer ." ". . . . .";
+  background-color: #ffffff;
+  text-align: center;
+}
+.App ::-moz-selection {
+  /* Code for Firefox */
+  color: #272424;
+  background: #a2ffe6;
+}
+.App ::selection {
+  color: #272424;
+  background: #a2ffe6;
+}
+.App h1,
+.App h2,
+.App h3,
+.App h4 {
+  font-size: 1.9em;
+  font-weight: 900;
+}
+.App h2 {
+  font-weight: 700;
+  font-size: 1.45em;
+}
+.App h3 {
+  font-weight: 600;
+  font-size: 1.154em;
+}
+.App h4 {
+  font-weight: 600;
+  font-size: 1.15em;
+}
+.App .brS {
+  display: block;
+  margin-bottom: 0.48em;
+}
+.App .brM {
+  display: block;
+  margin-bottom: 0.8em;
+}
+.App .brL {
+  display: block;
+  margin-bottom: 1.6em;
+}
+.App .brXL {
+  display: block;
+  margin-bottom: 2em;
+}
+.App .brXXL {
+  display: block;
+  margin-bottom: 3em;
+}
+.App .brXXXL {
+  display: block;
+  margin-bottom: 3.6em;
+}
+.App .external_link,
+.App .deco {
+  color: #7fe3c8;
+  text-decoration: underline;
+}
+.App .active {
+  font-size: 1.06em;
+  border-bottom: 2px solid #7fe3c8;
+}
+
+.Shadow, .App {
+  margin: 2.5% auto 0 auto;
+  height: 90%;
+  width: 90%;
+  border-radius: 11px;
+}
+
+.motion {
+  display: none;
+}
+
+.pointer {
+  display: initial;
+}
+
+.Link {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.Wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.Shadow {
+  top: 100vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: #a2ffe6;
+  z-index: 8;
+}
+
+a {
+  cursor: pointer;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 2em;
+  grid-area: logo;
+  display: flex;
+  margin: auto;
+  height: 20%;
+  width: 100%;
+  max-width: 400px;
+  text-decoration: none;
+  color: #272424;
+  z-index: 100;
+}
+.logo span:hover {
+  font-size: 1.8em;
+  transition: 15ms;
+  transition-delay: 2ms;
+  border-top: 5px solid #a2ffe6;
+  border-radius: 2.5px;
+}
+
+.burgerMenu {
+  grid-area: menu;
+  height: 80%;
+  width: 100%;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer {
+  font-size: 1em;
+  font-weight: 700;
+  grid-area: footer;
+  display: flex;
+  margin: 0 26% 1% 26%;
+  justify-content: center;
+  align-items: flex-end;
+}
+.footer a {
+  margin: 0 6%;
+}
+.footer a:hover {
+  transition: all 120ms;
+  transform: scale(1.2, 1.2);
+}
+
+.popUp {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2em;
+}
+.popUp div {
+  margin: 8% auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1em;
+}
+.popUp span {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+@media (min-width: 1700px) {
+  .burgerMenu {
+    padding-right: 7vh;
+  }
+}
+@media (max-width: 1000px) {
+  .Shadow {
+    top: 0;
+    left: -1px;
+    margin: 0;
+    height: 94.2%;
+    width: 95%;
+    border-radius: 23px;
+  }
+
+  .motion {
+    display: initial;
+  }
+
+  .pointer {
+    display: none;
+  }
+
+  .Wrapper {
+    position: relative;
+    width: 96%;
+    height: 98%;
+    margin: 2% auto 0 auto;
+  }
+
+  .App {
+    height: 95%;
+    width: 95%;
+    margin: 5% auto auto auto;
+    justify-items: center;
+    border-radius: 23px;
+    grid-template-rows: 1.5% minmax(10%, auto) 0.1% 1fr 2% 5% 7%;
+    /*MARGIN*/
+    grid-template-columns: 5% minmax(40%, 1fr) 10% 5%;
+    grid-template-areas: " . . . . " " logo logo menu . " " . . . . " " component component component component " " . . . ." " . footer footer . " " . . . . ";
+  }
+
+  .logo {
+    justify-self: flex-start;
+    margin-left: 10%;
+    font-size: 1.5em;
+  }
+
+  .footer {
+    font-size: 0.79em;
+    width: 95%;
+    height: 100%;
+    margin: 26% 26% 0 26%;
+    padding-bottom: 10%;
+  }
+}
+.loadingWrapper {
+  height: 100%;
+  width: 100%;
+  animation: body 3s infinite linear;
+  animation-direction: alternate;
+}
+
+@keyframes body {
+  from {
+    background: black;
+  }
+  to {
+    background: #A2FFE6;
+  }
+}
+svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.svg {
+  fill: #A2FFE6;
+  animation: svg 3s infinite linear;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes svg {
+  to {
+    stroke-dashoffset: 0;
+    fill: black;
+  }
+}
+.about {
+  grid-area: component;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(6%, auto) 1fr 3% minmax(50px, 1fr) minmax(auto, auto);
+  grid-template-columns: 8% 20% 5% 60% 8%;
+  grid-template-areas: " . . . . . " " . foto . content . " " . . . content . " " . skills . content . " " . . . . . ";
+  min-height: 0px;
+  /* NEW */
+  min-width: 0;
+}
+
+.about_Portrait {
+  grid-area: foto;
+  width: 50%;
+  max-width: 280px;
+  min-width: 190px;
+  border-radius: 6px;
+  justify-self: center;
+}
+
+.skills {
+  grid-area: skills;
+  justify-self: center;
+  width: 80%;
+  height: auto;
+  padding: 20px 7px;
+  min-height: 192px;
+  min-width: 190px;
+  max-width: 280px;
+  border-radius: 6px;
+  background: #0A0A0A;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 900;
+  line-height: 94.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-decoration: none;
+}
+.skills .small {
+  font-size: 0.65em;
+  line-height: 100%;
+}
+.skills .medium {
+  font-size: 0.7em;
+  line-height: 100%;
+}
+.skills .height {
+  margin-bottom: -5px;
+}
+.skills .hovered {
+  border-radius: 6px;
+  background: #A2FFE6;
+  color: #0A0A0A;
+  border: 0px solid transparent;
+  padding: 0 10% 0 4%;
+  transition: all 250ms;
+}
+
+.aboutContent {
+  display: block;
+  grid-area: content;
+  text-align: justify;
+  word-spacing: 5px;
+  line-height: 1.22;
+  overflow-y: scroll;
+  padding-right: 2%;
+  height: auto;
+}
+.aboutContent h1 {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+@media (max-width: 1000px) {
+  .about {
+    grid-area: component;
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0 1fr minmax(min-content, max-content) 1fr 0;
+    grid-template-columns: 8% 1fr 8%;
+    min-height: 0;
+    min-width: 0;
+    max-width: 450px;
+    grid-gap: 1% 0;
+    margin: 0 0 -5.5% 0;
+  }
+
+  .about_Portrait {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 auto;
+  }
+
+  .aboutContent {
+    grid-row: 3;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    min-height: min-content;
+    display: block;
+    text-align: justify;
+    word-spacing: 5px;
+    line-height: 1.7;
+    margin: 0 auto;
+  }
+
+  .skills {
+    grid-row: 4;
+    grid-column: 2;
+    width: 100%;
+    height: min-content;
+    min-height: min-content;
+    max-width: none;
+    margin: 0 auto;
+  }
+}
+.Hire {
+  grid-area: component;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  text-align: center;
+  font-weight: 700;
+  display: grid;
+  gap: 0;
+  grid-template-rows: 5% 7% 7% minmax(min-content, max-content) 11% 8%;
+  grid-template-columns: 12.5% 1fr 1fr 5% 12.5%;
+}
+
+.blabla_container {
+  background-color: #A2FFE6;
+  border-radius: 10px;
+  box-shadow: 17px 17px rgba(35, 35, 38, 0.9);
+  grid-column: 2/4;
+  grid-row: 3/5;
+  width: 100%;
+  height: 100%;
+}
+
+.mailing {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 0;
+}
+
+.inputNlabel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Hire_title {
+  font-weight: 900;
+  font-size: 2.5em;
+  align-self: end;
+  width: 100%;
+  z-index: 100;
+  grid-column: 3/5;
+  grid-row: 2;
+  text-align: right;
+  padding-right: 20%;
+  line-height: 0.8;
+}
+
+.Hire_text {
+  font-weight: 500;
+  line-height: 1.25;
+  grid-area: text;
+  margin: 0;
+  padding: 2% 3% 4% 3%;
+  text-align: left;
+  width: 50%;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  grid-column: 3/5;
+  grid-row: 4/6;
+  background-color: #FFFFFF;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 17px 17px rgba(35, 35, 38, 0.9);
+}
+.form input {
+  border-radius: 5px;
+  border: 1.7px solid black;
+  margin: 0.6em;
+  width: 78%;
+}
+.form textarea {
+  border-radius: 5px;
+  border: 1.7px solid black;
+  margin: 1em auto;
+  resize: none;
+  height: 20vh;
+  width: 90%;
+  min-height: 150px;
+  max-height: 250px;
+}
+.form .submit {
+  margin: 0 auto;
+  width: min-content;
+  padding: 0.3em 1.1em;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #232326;
+}
+
+@media (max-height: 800px) {
+  .Hire_text {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 1000px) {
+  .form textarea {
+    max-height: none;
+    height: 350px;
+  }
+
+  .Hire {
+    grid-template-rows: 5% 7% 7% minmax(min-content, max-content) 11% 0;
+    margin: 10% 0 -35% 0;
+  }
+}
+.Work_wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  grid-area: component;
+  display: flex;
+}
+@media (min-width: 1870px) {
+  .Work_wrapper ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.Work {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+}
+.Work .title {
+  margin-bottom: 8px;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  height: 360px;
+}
+
+.title_projects {
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  color: black;
+  padding-bottom: 7px;
+}
+.title_projects span:hover {
+  transition: 90ms;
+  border-bottom: 2px solid #a2ffe6;
+  border-radius: 2px;
+}
+.title_projects .freelance_tag {
+  color: #4285f4;
+}
+.title_projects:visited {
+  color: black;
+}
+
+.square_projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: #0a0a0a;
+  color: #38383d;
+  font-size: 1.7em;
+  font-weight: 900;
+  line-height: 119%;
+  width: 320px;
+  height: 330px;
+  max-width: 357px;
+  max-height: 359px;
+  padding: 9px 7px;
+  border-radius: 25px;
+}
+.square_projects img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 7px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+@media (max-width: 1000px) {
+  .Work {
+    grid-area: component;
+    width: 100%;
+    height: 100%;
+    margin: 5% 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .Work :last-child {
+    margin-bottom: 0;
+  }
+
+  .title_projects {
+    height: auto;
+  }
+
+  .square_projects {
+    width: auto;
+  }
+
+  .cardWrapper {
+    margin: 10% auto 15% auto;
+  }
+}
+
+.Home {
+  grid-area: component;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 5%;
+}
+.Home :last-child {
+  margin-right: 0;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  max-width: 357px;
+  max-height: 359px;
+  margin-right: 2%;
+}
+
+.title {
+  font-weight: 900;
+  margin-bottom: 6px;
+  display: flex;
+  color: black;
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9px 7px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 15px rgba(220, 220, 220, 0.6);
+  background: #0a0a0a;
+  color: #38383d;
+  font-weight: 900;
+  line-height: 119%;
+}
+.square .Link:hover {
+  color: #a2ffe6;
+  transform: scale(1.2, 1.2);
+  transition: 250ms;
+}
+.square .highlight {
+  color: white;
+  line-height: 84.5%;
+}
+
+.about_me_title {
+  justify-content: center;
+}
+
+.about_me_img {
+  min-width: 234px;
+  object-fit: cover;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  margin: 0 auto;
+  box-shadow: 0px 15px 15px rgba(220, 220, 220, 0.5);
+}
+
+.hire_me_title {
+  justify-content: flex-start;
+  padding-left: 18px;
+}
+
+.hire_me_img {
+  font-size: 1.8em;
+  text-align: left;
+  align-items: flex-start;
+}
+.hire_me_img .highlight {
+  font-size: 1.82em;
+  margin-bottom: 2px;
+}
+.hire_me_img .height {
+  margin-bottom: -5px;
+}
+
+.my_work_title {
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.my_work_img {
+  align-items: flex-end;
+  font-size: 1.7em;
+}
+.my_work_img .highlight {
+  font-size: 2em;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+@media (max-width: 1000px) {
+  .Home {
+    grid-area: component;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .box {
+    margin: 35px 0;
+  }
+
+  .about_me {
+    order: 1;
+  }
+
+  .my_work {
+    order: 2;
+  }
+
+  .hire_me {
+    order: 3;
+  }
+}
+.Contact {
+  grid-area: component;
+  max-width: 1900px;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  padding: 2% 2% 5% 20%;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 20% 12% 35% 27% 15%;
+  grid-template-columns: 3% 30% 5% 40% 10%;
+  overflow: visible;
+}
+
+.contact_title {
+  grid-row: 1;
+  grid-column: 2;
+  padding: 8% 0 0 0;
+  text-align: right;
+  font-weight: 900;
+  font-size: 2.5em;
+}
+
+.black_div {
+  grid-row: 2/5;
+  grid-column: 2/5;
+  width: 100%;
+  height: 100%;
+  background-color: #232326;
+  border-radius: 7px;
+}
+
+.contact_pic {
+  grid-row: 3/-1;
+  grid-column: 1/3;
+  object-fit: contain;
+  width: 85%;
+  z-index: 1;
+}
+
+.contact_p {
+  display: grid;
+  grid-row: 100%;
+  grid-column: 80% 20%;
+  grid-template-areas: "text qr";
+  width: 100%;
+  height: 100%;
+  background-color: #A2FFE6;
+  border-radius: 8px;
+  grid-row: 1/4;
+  grid-column: 4/6;
+  padding: 5% 0 0 3%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.contact_p .text {
+  grid-area: text;
+}
+.contact_p .text .name {
+  font-size: 1.5em;
+  font-weight: 900;
+  letter-spacing: 0.9px;
+  margin: 1% 0 4.5% 0;
+}
+.contact_p .qr {
+  object-fit: fill;
+  grid-area: qr;
+  margin: 0 10%;
+  width: 70%;
+  border-radius: 10px;
+}
+.contact_p .hyperlink {
+  width: 45px;
+  margin-right: 4%;
+}
+.contact_p .hyperlink:hover {
+  transition: all 250ms;
+  transition-delay: 50ms;
+  transform: scale(1.2) rotate(-15deg);
+}
+.contact_p .github {
+  width: 49px;
+}
+.contact_p .linkedin:hover {
+  transition: all 250ms;
+  transition-delay: 50ms;
+  transform: scale(1.2) rotate(15deg);
+}
+
+@media (max-width: 1000px) {
+  .Contact {
+    width: 100%;
+    padding: 8% 6% 20% 6%;
+    grid-template-rows: 13% 10% 23% 10% 7% 35%;
+    grid-template-columns: 10% 20% 25% 30% 15%;
+  }
+
+  .contact_title {
+    grid-row: 1/2;
+    grid-column: 1/5;
+    justify-self: center;
+    padding: 10px;
+  }
+
+  .black_div {
+    grid-row: 3/7;
+    grid-column: 2/5;
+  }
+
+  .contact_pic {
+    grid-row: 6/7;
+    grid-column: 1/5;
+  }
+
+  .contact_p {
+    grid-row: 2/5;
+    grid-column: 3/6;
+    font-size: 0.8em;
+  }
+  .contact_p .text {
+    margin-top: 2%;
+  }
+
+  .contact_p .hyperlink {
+    width: 29px;
+    margin-right: 5.5%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'GlacialIndifferenceRegular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+}
+
+#root,
+body,
+html {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdbcbc;
+  border-radius: 15px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.692);
+}
+
+@media (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
